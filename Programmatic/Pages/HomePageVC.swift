@@ -44,6 +44,7 @@ class HpmePageVC: UIViewController{
     override func viewDidLoad(){
         super.viewDidLoad()
         setupUI()
+        addTargets()
     }
 
     //MARK -Helpers 
@@ -55,7 +56,17 @@ class HpmePageVC: UIViewController{
         //configureStackView()
         configureWidthExtesion()
     }
-    funk configureWidthExtesion(){
+
+    func addTargets(){
+        loginButton.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
+    }
+
+    //MARK: -Actions
+    @objc func loginButtonClicked(){
+        navigationController?.pushViewController(DetailsVC(), animated: true)
+    }
+
+    func configureWidthExtesion(){
         //UIViewe Extension ile subView fonk. yazarak eklemeleri orada yaptık
         view.addSubViewsFromExt(userNameTextField,passwordTextField,loginButton)
 
