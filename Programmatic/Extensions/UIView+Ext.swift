@@ -44,4 +44,11 @@ extension UIView {
             addSubView(view)
         }
     }
+    //MARK: -Width and Height
+    //Sadece yükseklik ve genişlik ayarlanmak isterse
+    func configSize(height: CGFloat, width: CGFloat){
+        translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalToConstant: height).isActive = true
+        widthAnchor.constraint(equalToConstant: width).isActive = true
+    }
 }

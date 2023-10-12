@@ -40,13 +40,6 @@ class HpmePageVC: UIViewController{
         stackView.pacing = 15
         return stackView
     }()
-
-
-
-
-    //MARK: Variables
-
-
     //MARK: Life cycle
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -67,10 +60,12 @@ class HpmePageVC: UIViewController{
         view.addSubViewsFromExt(userNameTextField,passwordTextField,loginButton)
 
         //Hangi nesne olursa onu kullandığımızda UIViewde anchor fonk yazdık orası çalışır
-        let standartPadding: CGFloat = 30
-        userNameTextField.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: rightAnchor ,paddingTop: standartPadding, paddingLeft: standartPadding, paddingRight: standartPadding, height: standartPadding){
-        passwordTextField.anchor(top: userNameTextField.bottomAnchor, left: view.leftAnchor, right: rightAnchor, paddingTop: standartPadding, paddingLeft: standartPadding, paddingRight: standartPadding, height:standartPadding)
+        let standartPadding: CGFloat = 15
+        userNameTextField.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: rightAnchor ,paddingTop: standartPadding, paddingLeft: standartPadding, paddingRight: standartPadding, height: standartPadding * 2){
+        passwordTextField.anchor(top: userNameTextField.bottomAnchor, left: view.leftAnchor, right: rightAnchor, paddingTop: standartPadding, paddingLeft: standartPadding, paddingRight: standartPadding, height:standartPadding * 2)
         loginButton.anchor(top: passwordTextField.bottomAnchor, left: view.leftAnchor, right: rightAnchor, paddingTop: standartPadding, paddingLeft: standartPadding, paddingRight: standartPadding)
+        loginButton.configSize(height: , width: )
+       
         }
 
     }
